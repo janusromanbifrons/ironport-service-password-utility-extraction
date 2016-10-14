@@ -8,7 +8,7 @@ The initial steps are much the same, but we will not be making any changes to th
 ##### Timeline:
 __Disclosure to Vendor:__ 2016-10-03
 
-__Vendor Response:__ TBA
+__Vendor Response:__ 2016-10-04
 
 __Vendor Fix/Patch:__ TBA
 
