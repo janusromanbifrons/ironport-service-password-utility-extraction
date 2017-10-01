@@ -1,0 +1,23 @@
+#!/bin/sh
+
+SERIAL_NUMBER=$1
+export SERIAL_NUMBER
+SEED_KEY=$2
+
+# They use an old `libcrypto` version, so we need this temporarily.
+# NOTE: This version difference can break things.
+cp libcrypto.so.6 /usr/lib/libcrypto.so.6
+
+printf "Serial: "
+printf $SERIAL_NUMBER
+printf "\nSeed Key: "
+printf $SEED_KEY
+printf "\n... Generating service password...\n"
+
+PASSWORD=$( ./gen_pass $2 )
+printf "Service Password: "
+printf $PASSWORD
+printf "\n"
+
+# Cleaning Up the old libcrypto library.
+rm /usr/lib/libcrypto.so.6
